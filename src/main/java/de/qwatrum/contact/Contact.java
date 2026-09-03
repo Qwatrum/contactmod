@@ -1,5 +1,6 @@
 package de.qwatrum.contact;
 
+import de.qwatrum.contact.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleGroupRegistry;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
@@ -15,18 +16,25 @@ import java.util.logging.Logger;
 
 public class Contact implements ModInitializer {
 
+    public static final String MOD_ID = "contact";
+
     @Override
     public void onInitialize() {
+
+        ModItems.registerModItems();
 
         UseItemCallback.EVENT.register((player, level, interactionHand) -> {
 
             if (level.getBlockState(BlockPos.containing(player.position())).getBlock() == Blocks.AIR) {
-                if (player.getActiveItem().getItem() == Items.FIREWORK_STAR) {
+                if (player.getActiveItem().getItem() == ModItems.EMITTER) {
 
-                    level.addAlwaysVisibleParticle(ParticleTypes.END_ROD, true, player.getX(), player.getY(), player.getZ(), 0.0, 0.0, 0.0);
-                    level.addAlwaysVisibleParticle(ParticleTypes.END_ROD, true, player.getX(), player.getY(), player.getZ(), 0.0, 0.0, 0.0);
-                    level.addAlwaysVisibleParticle(ParticleTypes.END_ROD, true, player.getX(), player.getY(), player.getZ(), 0.0, 0.0, 0.0);
-                    return InteractionResult.PASS;
+                    ParticleOptions particle = ParticleTypes.END_ROD;
+
+                    level.addAlwaysVisibleParticle(particle, true, player.getX(), player.getY() + 0.5, player.getZ(), 0.0, 0.0, 0.0);
+                    level.addAlwaysVisibleParticle(particle, true, player.getX(), player.getY() + 0.5, player.getZ(), 0.0, 0.0, 0.0);
+                    level.addAlwaysVisibleParticle(particle, true, player.getX(), player.getY() + 0.5, player.getZ(), 0.0, 0.0, 0.0);
+
+                    return InteractionResult.SUCCESS;
                 }
 
             }

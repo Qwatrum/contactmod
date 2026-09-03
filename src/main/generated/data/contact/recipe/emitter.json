@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:end_rod",
+    "/": "minecraft:stick"
+  },
+  "pattern": [
+    "  #",
+    " # ",
+    "/  "
+  ],
+  "result": {
+    "id": "contact:emitter"
+  }
+}
