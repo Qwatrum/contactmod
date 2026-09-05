@@ -1,3 +1,5 @@
 {
-  "item.contact.emitter": "Emitter"
+  "item.contact.emitter": "Emitter",
+  "key.category.contact.contact": "Contact",
+  "key.contact.hug": "Hugging"
 }
