@@ -15,6 +15,7 @@ import java.util.function.Function;
 public class ModItems {
 
     public static final Item EMITTER = registerItem("emitter", properties -> new Item(properties.stacksTo(1).durability(128)));
+    public static final Item CONTACTOR = registerItem("contactor", properties -> new Item(properties.stacksTo(1)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
 
@@ -25,6 +26,7 @@ public class ModItems {
     public static void registerModItems() {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(fabricCreativeModeTabOutput -> {
             fabricCreativeModeTabOutput.accept(EMITTER);
+            fabricCreativeModeTabOutput.accept(CONTACTOR);
         });
     }
 }
