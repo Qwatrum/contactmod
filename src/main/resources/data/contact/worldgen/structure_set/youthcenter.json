@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "weight": 1,
+      "structure": "contact:youthcenter"
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "separation": 70,
+    "spacing": 100,
+    "salt": 543126
+  }
+}
